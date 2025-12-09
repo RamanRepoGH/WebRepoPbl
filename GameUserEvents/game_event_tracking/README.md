@@ -4,7 +4,7 @@ This project provides the skeleton for an event-driven data pipeline to track mo
 
 ## 1. Architectural Approach
 
-Here is the data flow that has been assumed for sending the raw events with minimal schema validation to Snowflake Staging Table. This can ensure that we don't do a lot of processing at client side and capture almost all the events in our staging layer. This will ensure that the following overall flow is lightweight. 
+Here is the data flow that has been assumed for sending the raw events with minimal schema validation to Snowflake Staging Table. This can ensure that we don't do a lot of processing at client side and capture almost all the events in our staging layer. This will ensure that the following overall flow is lightweight and we can handle the schema evolution in future very easily. 
 
 Game SDK → API → Firehose → Snowpipe Streaming/S3 → Snowflake Staging Table (raw_events)
 
@@ -77,4 +77,5 @@ To make this pipeline production-ready, I would implement the following:
 4.  **Monitoring and Alerting:**
     * Set up CloudWatch/Prometheus metrics for the API (latency, error rates, throughput) and Firehose (delivery success rate, record count) with automatic alerting on anomalies.
 5.  **Business validations in the Snowflake:**
+
     * Implement the business validations in Snowflake and move the data to final tables. 
