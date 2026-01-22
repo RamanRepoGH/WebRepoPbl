@@ -3,6 +3,7 @@ from .models import models import InstallEventModel, PurchaseEventModel
 from .firehose_client import firehose_client import FirehoseClient
 
 STRICT_MODE = False  # optional strict validation toggle - the approach will be explained in readme.
+#merge conflict resolved
 
 app = FastAPI()
 firehose = FirehoseClient(stream_name="game-events-firehose")
