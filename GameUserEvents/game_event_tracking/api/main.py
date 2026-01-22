@@ -12,7 +12,7 @@ def strict_purchase_validation(event: PurchaseEventModel):
     """
     This procedure is kind of a placeholder only to do the very basic and mandatory API side validations.
     We intend to do the core business validations in side Snowflake. The error handling will have to be
-    implemented appropriately in production
+    implemented appropriately in production. This proc is not called anywhere in the main program. 
     """
     errors = []
 
