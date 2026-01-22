@@ -4,6 +4,8 @@ from .firehose_client import firehose_client import FirehoseClient
 
 STRICT_MODE = False  # optional strict validation toggle - the approach will be explained in readme.
 
+#create merge conflict with 2nd CR
+
 app = FastAPI()
 firehose = FirehoseClient(stream_name="game-events-firehose")
 
